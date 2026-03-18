@@ -14,6 +14,8 @@ OpenClaw + FUTU OpenD integration for natural-language trade analysis, pending-o
 
 ---
 
+Use OpenClaw's built-in agent runtime for analysis and orchestration, then hand execution to FUTU OpenD. No separate multi-agent framework or extra agent API-key wiring is required for the trading flow itself, which makes this especially friendly for OpenClaw users who already rely on the platform's built-in model access.
+
 This repository packages two complementary pieces:
 - `skill/`: a reusable OpenClaw skill for FUTU trading workflows
 - `executor/`: a thin execution gateway that enforces risk controls before any order is sent to FUTU
@@ -25,6 +27,7 @@ Most trading assistants stop at analysis. This project closes the loop:
 - let OpenClaw prepare a pending order from that analysis
 - require one explicit confirmation before execution
 - keep hard risk controls in code, not only in prompts
+- reuse OpenClaw's built-in agent capabilities instead of requiring a separate trading-agent API stack
 
 ## Core Features
 
