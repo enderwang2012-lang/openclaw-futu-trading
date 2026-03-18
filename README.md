@@ -1,6 +1,18 @@
+<div align="center">
+
 # OpenClaw FUTU Trading
 
 OpenClaw + FUTU OpenD integration for natural-language trade analysis, pending-order approval, and guarded order execution.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Safety](https://img.shields.io/badge/Execution-simulation--first-orange)
+![Broker](https://img.shields.io/badge/Broker-FUTU%20OpenD-2ea44f)
+![Workflow](https://img.shields.io/badge/OpenClaw-natural%20language%20approval-6f42c1)
+
+</div>
+
+---
 
 This repository packages two complementary pieces:
 - `skill/`: a reusable OpenClaw skill for FUTU trading workflows
