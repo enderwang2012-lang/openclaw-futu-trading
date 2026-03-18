@@ -16,6 +16,8 @@ OpenClaw + FUTU OpenD integration for natural-language trade analysis, pending-o
 
 Use OpenClaw's built-in agent runtime for analysis and orchestration, then hand execution to FUTU OpenD. No separate multi-agent framework or extra agent API-key wiring is required for the trading flow itself, which makes this especially friendly for OpenClaw users who already rely on the platform's built-in model access.
 
+For OpenAI subscription users already using OpenClaw, this means the trading workflow can reuse the agent capability you already have, instead of forcing you to wire up a separate trading-agent stack just to get started.
+
 This repository packages two complementary pieces:
 - `skill/`: a reusable OpenClaw skill for FUTU trading workflows
 - `executor/`: a thin execution gateway that enforces risk controls before any order is sent to FUTU
