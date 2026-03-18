@@ -46,6 +46,23 @@ Current built-in safeguards:
 - after-hours, pre-market, auction, and closed-session execution blocked
 - REAL execution requires an explicit confirmation string
 
+## Workflow Overview
+
+```mermaid
+flowchart TD
+    A["User talks to OpenClaw in natural language"] --> B["OpenClaw analyzes the trade idea"]
+    B --> C{"Trade or no trade?"}
+    C -->|No trade| D["Return NO_TRADE with reason"]
+    C -->|Trade| E["Prepare a pending FUTU order"]
+    E --> F["Ask for one explicit confirmation"]
+    F --> G{"User confirms?"}
+    G -->|No| H["Stop without execution"]
+    G -->|Yes| I["Executor validates risk controls"]
+    I --> J{"Session + size valid?"}
+    J -->|No| K["Block the order"]
+    J -->|Yes| L["Submit to FUTU OpenD"]
+```
+
 ## Repo Layout
 
 ```text
@@ -115,6 +132,41 @@ This repository supports a direct conversation pattern:
 For details, see:
 - [`skill/SKILL.md`](./skill/SKILL.md)
 - [`executor/README.md`](./executor/README.md)
+
+## Demo Conversation
+
+User:
+
+```text
+请分析腾讯控股是否适合做一笔最小测试交易。
+如果不建议交易，直接告诉我原因。
+如果建议交易，请直接生成待执行单并告诉我摘要，等我确认一次后再执行。
+```
+
+OpenClaw:
+
+```text
+已生成待执行单：
+- 股票：HK.00001
+- 操作：买入
+- 数量：1手
+- 环境：模拟盘
+- 原因：短线结构改善，适合最小测试单
+
+要我继续执行吗？
+```
+
+User:
+
+```text
+确认执行
+```
+
+OpenClaw:
+
+```text
+已执行最新模拟盘待执行单，并返回执行结果摘要。
+```
 
 ## Publishing Notes
 
