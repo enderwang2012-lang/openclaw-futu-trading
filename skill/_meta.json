@@ -1,0 +1,16 @@
+{
+  "name": "openclaw-futu-trading",
+  "version": "1.0.0",
+  "description": "OpenClaw 与 FUTU OpenD 的安全交易接入技能",
+  "author": "Codex",
+  "license": "MIT",
+  "tags": ["openclaw", "futu", "trading", "automation", "finance"],
+  "category": "finance",
+  "dependencies": [
+    "futu-api>=10.0.6008",
+    "pandas>=2.0.0"
+  ],
+  "env_vars": [],
+  "created_at": "2026-03-18",
+  "updated_at": "2026-03-18"
+}
